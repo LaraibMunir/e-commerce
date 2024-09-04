@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="hijabs.html">Hijabs</a></li>
+            <li><a href="accessories.html">Accessories</a></li>
+            <li><a href="cart.html">Cart</a></li>
+        </ul>
+    </nav>
+
+    <!-- Product Details Section -->
+    <div class="product-detail-container">
+        <div class="product-image">
+            <img id="product-image" src="" alt="Product Image">
+        </div>
+        <div class="product-info">
+            <h1 id="product-name">Product Name</h1>
+            <p id="product-price">$0.00</p>
+            <p id="product-description">Product Description</p>
+            <p>Availability: <span id="product-availability">In Stock</span></p>
+
+            <!-- Add to Cart Button -->
+            <button class="add-to-cart-btn" onclick="addToCart()">Add to Cart</button>
+            <p id="cart-message" style="display: none; color: green;">Added to Cart!</p>
+        </div>
+    </div>
+
+    <script>
+        // Example product data (replace this with your API or data source)
+        const product = {
+            id: 1,
+            name: "Pleated Hijabs - Seafoam",
+            price: "Rs.820.00",
+            description: "Explore our crumpled and pleated textured hijabs, crafted for all-season wear. These stylish hijabs stay securely in place.",
+            image: "images/pleated-hijab-seafoam.jpg",  // Ensure this image path is correct
+            availability: "In Stock"
+        };
+
+        // Display the product details on the page
+        function displayProductDetails() {
+            document.getElementById('product-name').textContent = product.name;
+            document.getElementById('product-price').textContent = product.price;
+            document.getElementById('product-description').textContent = product.description;
+            document.getElementById('product-image').src = product.image;
+            document.getElementById('product-availability').textContent = product.availability;
+
+            // Store the product in localStorage for easy access when adding to the cart
+            localStorage.setItem('selectedProduct', JSON.stringify(product));
+        }
+
+        // Function to add the product to the cart
+        function addToCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const selectedProduct = JSON.parse(localStorage.getItem('selectedProduct'));
+            cart.push(selectedProduct);
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // Display "Added to Cart" message
+            const cartMessage = document.getElementById('cart-message');
+            cartMessage.style.display = 'block';
+            setTimeout(() => {
+                cartMessage.style.display = 'none';
+            }, 2000);  // hide the message after 2 seconds
+        }
+
+        // Initialize the product details on page load
+        window.onload = function() {
+            displayProductDetails();
+        };
+    </script>
+</body>
+</html>

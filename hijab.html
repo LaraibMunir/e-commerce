@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Menu Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn" onclick="fetchProducts('Plain Georgette Hijab Sets')">Hijabs</a>
+                <div class="dropdown-content">
+                    <a href="#" onclick="fetchProducts('Plain Georgette Hijab Sets')">Metallic Crinkle Silk Chiffon</a>
+                    <a href="#" onclick="fetchProducts('Printed Georgette Hijab Sets')">Plain Georgette</a>
+                    <a href="#" onclick="fetchProducts('Lawn Hijab Sets')">Organza</a>
+                    <a href="#" onclick="fetchProducts('Shimmer Hijab Sets')">Printed Silk</a>
+                    <a href="#" onclick="fetchProducts('Two Tone Hijabs')">Premium Satin Crinkle Silk</a>
+                    <a href="#" onclick="fetchProducts('Two Tone Hijabs')">Stripe Lawn</a>
+                    <a href="#">View All</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn" onclick="fetchProducts('Plain Georgette Niqab Hijab Sets')">Accessories</a>
+                <div class="dropdown-content">
+                    <a href="#" onclick="fetchProducts('Plain Georgette Niqab Hijab Sets')">Scrunchies</a>
+                    <a href="#" onclick="fetchProducts('Printed Georgette Niqab Hijab Sets')">Magnet Pins</a>
+                    <a href="#">View All</a>
+                </div>
+            </li>
+            <li><a href="#">Abayas</a></li>
+        </ul>
+    </nav>
+
+    <div id="product-container" class="product-container">
+        <!-- Products will be displayed here -->
+    </div>
+
+    <script src="product.js"></script>
+</body>
+</html>

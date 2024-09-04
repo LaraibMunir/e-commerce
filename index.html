@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Menu Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section class="top-head">
+        <h1><strong>TAKHT E LIBAAS</strong></h1>
+       <img src="">
+    </section>
+
+
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="hijab.html" class="dropbtn" onclick="fetchProducts('Plain Georgette Hijab Sets')">Hijabs</a>
+                <div class="dropdown-content">
+                    <a href="#" onclick="fetchProducts('Metallic Crinkle Silk Chiffon')">Metallic Crinkle Silk Chiffon</a>
+                    <a href="#" onclick="fetchProducts('Plain Georgette')">Plain Georgette</a>
+                    <a href="#" onclick="fetchProducts('Organza')">Organza</a>
+                    <a href="#" onclick="fetchProducts('Printed Silk')">Printed Silk</a>
+                    <a href="#" onclick="fetchProducts('Premium Satin Crinkle Silk')">Premium Satin Crinkle Silk</a>
+                    <a href="#" onclick="fetchProducts('Stripe Lawn')">Stripe Lawn</a>
+                    <a href="#">View All</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn" onclick="fetchProducts('Plain Georgette Niqab Hijab Sets')">Accessories</a>
+                <div class="dropdown-content">
+                    <a href="#" onclick="fetchProducts('Magnet Pins')">Magnet Pins</a>
+                    <a href="#">View All</a>
+                </div>
+            </li>
+            <li><a href="#">Abayas</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h1>Welcome to Takht e Libaas</h1>
+        <p>Your destination for elegant scarves and accessories.</p>
+    </section>
+
+    <section class="about-fabrics">
+        <div class="about-fabrics-content">
+            <img src="asset/lawn.jpg" alt="Hijab Fabric" class="about-fabrics-img" height="40%" width="40%">
+            <div class="about-fabrics-text">
+                <h2>All About Our Fabrics</h2>
+                <p>Need help finding the right hijab? Click below to learn more about the fabrics we carry at Takht e Libaas and what makes them special. Find the best hijab fabric for you based on your unique lifestyle, hijab preferences, and style.</p>
+                <button class="learn-more-btn">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="mission">
+        <h1> At Takht e Libas, we make the scarves you always</h1>
+         <h1>wished you had — or the ones you never knew</h1>
+             <h1>were possible.</h1>
+        <p>We make every scarf and accessory from scratch with 
+         meticulous attention to quality, style and innovation — you won't find our products 
+         anywhere else. Each scarf is a timeless piece we know you'll be excited to put
+          on and feel comfortable and confident in all day, for years to come.</p>
+
+ </section>
+
+ <footer>
+    <div class="container">
+        <div class="footer-column">
+          <img src="asset/logo.jpeg" alt="Brand Logo">
+          <p>123 MAIN STREET LAHORE<br>+92 331 2345678<br><a href="#">info@takhtelibaas.com</a></p>
+        </div>
+        <div class="footer-column">
+            <h3>Customer Service</h3>
+            <ul>
+              <li><a href="#">Snipping Policy</a></li>
+              <li><a href="#">Refund Policy</a></li>
+              <li><a href="#">Terms Of Services</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Newsletter Sign Up</h3>
+            <form action="#">
+              <label for="email">Enter your email address</label>
+              <input type="email" id="email" required>
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+    <p>&copy; 2024 Takht e Libaas. All rights reserved.</p>
+</footer>
+</body>
+</html>

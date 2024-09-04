@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="hijabs.html">Hijabs</a></li>
+            <li><a href="accessories.html">Accessories</a></li>
+            <li><a href="cart.html">Cart</a></li>
+        </ul>
+    </nav>
+
+    <!-- Cart Section -->
+    <div class="cart-container">
+        <h1>Your Cart</h1>
+        <div id="cart-items"></div>
+
+        <!-- Total and Proceed Buttons -->
+        <div class="cart-actions">
+            <button class="continue-shopping-btn" onclick="continueShopping()">Continue Shopping</button>
+            <button class="proceed-to-whatsapp-btn" onclick="proceedToWhatsApp()">Proceed to WhatsApp</button>
+        </div>
+    </div>
+
+    <script>
+        // Function to display cart items
+        function displayCartItems() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsContainer = document.getElementById('cart-items');
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+                return;
+            }
+
+            cartItemsContainer.innerHTML = cart.map((item, index) => `
+                <div class="cart-item">
+                    <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+                    <div class="cart-item-details">
+                        <h2>${item.name}</h2>
+                        <p>Price: ${item.price}</p>
+                        <p>Quantity: 1</p> <!-- In this example, quantity is fixed at 1 -->
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Function to continue shopping
+        function continueShopping() {
+            window.location.href = 'index.html'; // Redirect to homepage or any other page
+        }
+
+        // Function to proceed to WhatsApp with cart details
+        function proceedToWhatsApp() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            if (cart.length === 0) {
+                alert('Your cart is empty.');
+                return;
+            }
+
+            // Create the message content for WhatsApp
+            let message = 'I want to purchase these items:\n';
+            cart.forEach(item => {
+                message += `\n- ${item.name} (Quantity: 1) - ${item.price}`;
+            });
+
+            // Encode the message to make it URL-friendly
+            const encodedMessage = encodeURIComponent(message);
+
+            // Redirect to WhatsApp
+            const whatsappUrl = `https://wa.me/92-331-4487736?text=${encodedMessage}`;
+            window.location.href = whatsappUrl;
+        }
+
+        // Initialize cart items on page load
+        window.onload = function() {
+            displayCartItems();
+        };
+    </script>
+</body>
+</html>
